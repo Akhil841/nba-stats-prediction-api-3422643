@@ -246,4 +246,11 @@ def home():
         }
     })
 
-@app.route('/player/search/<name>')
+@app.route('/player/search/<name>')def player_search_route(name):
+    players = search_player(name)
+    return jsonify({"players": players})
+
+@app.route('/player/<player_id>/stats')
+def player_stats_route(player_id):
+    stats = get_player_stats(player_id)
+    if stats:
