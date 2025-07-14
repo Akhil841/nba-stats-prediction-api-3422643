@@ -81,4 +81,14 @@ def get_player_stats(player_id, season="2023-24"):
 
 def get_team_stats(team_id, season="2023-24"):
     """Get team stats"""
-    endpoint = f"{NBA_STATS_BASE_URL}/t
+    endpoint = f"{NBA_STATS_BASE_URL}/teamdashboardbygeneralsplits"
+    params = {
+        'TeamID': team_id,
+        'Season': season,
+        'SeasonType': 'Regular Season',
+        'MeasureType': 'Base',
+        'PerMode': 'PerGame'
+    }
+    
+    try:
+        data = get_cached_response(endpoint, headers=HEADER
