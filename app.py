@@ -207,4 +207,12 @@ def get_team_features(team_abbr, opponent_abbr):
             'opp_3p_pct': opp_df['FG3_PCT'].values[0]
         }
         
-        # Convert to numpy 
+        # Convert to numpy array in the correct order
+        X = np.array([[features[f] for f in model_features]])
+        return X, None
+    
+    except Exception as e:
+        return None, f"Error processing team data: {str(e)}"
+
+def predict_game_outcome(team_abbr, opponent_abbr):
+    """
