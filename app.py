@@ -268,4 +268,14 @@ def team_stats_route(team_abbr):
         return jsonify(stats)
     return jsonify({"error": "Could not retrieve team stats"}), 404
 
-@app.route('/predict
+@app.route('/predict', methods=['POST'])
+def predict_route():
+    data = request.get_json()
+    
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+    
+    team = data.get('team')
+    opponent = data.get('opponent')
+    
+    if not team or not opponent:
