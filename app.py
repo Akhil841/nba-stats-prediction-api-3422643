@@ -170,4 +170,12 @@ def get_team_features(team_abbr, opponent_abbr):
     opponent_id = TEAM_ID_MAP.get(opponent_abbr.upper())
     
     if not team_id or not opponent_id:
-        return
+        return None, "Invalid team abbreviation"
+    
+    try:
+        # Get team stats
+        team_data = get_team_stats(team_id)
+        opp_data = get_team_stats(opponent_id)
+        
+        if not team_data or not opp_data:
+            return None, "Could not retrieve team data"
