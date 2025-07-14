@@ -23,4 +23,14 @@ TEAM_ID_MAP = {
     "MIL": 1610612749, "MIN": 1610612750, "NOP": 1610612740, "NYK": 1610612752,
     "OKC": 1610612760, "ORL": 1610612753, "PHI": 1610612755, "PHX": 1610612756,
     "POR": 1610612757, "SAC": 1610612758, "SAS": 1610612759, "TOR": 1610612761,
-    "UTA": 1610612762, "WAS": 1
+    "UTA": 1610612762, "WAS": 1610612764
+}
+
+# Cache for storing API responses to minimize requests
+cache = {}
+CACHE_EXPIRY = 3600  # Cache expiry in seconds
+
+# Headers to mimic browser request for NBA Stats API
+HEADERS = {
+    'Host': 'stats.nba.com',
+    'User-Age
