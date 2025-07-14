@@ -178,4 +178,10 @@ def get_team_features(team_abbr, opponent_abbr):
         opp_data = get_team_stats(opponent_id)
         
         if not team_data or not opp_data:
-            return None, "Could not retrieve team data"
+            return None, "Could not retrieve team data"        
+        # Extract relevant stats from team data
+        team_stats = team_data['resultSets'][0]['rowSet'][0]
+        headers = team_data['resultSets'][0]['headers']
+        team_df = pd.DataFrame([team_stats], columns=headers)
+        
+        # Extract relevant stats from o
