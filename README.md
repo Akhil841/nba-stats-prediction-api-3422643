@@ -30,4 +30,15 @@ Returns available endpoints and API information
 Search for players by name
 
 ### GET /player/{player_id}/stats
-Get st
+Get statistics for a specific player
+
+### GET /team/{team_abbr}/stats
+Get statistics for a team (use team abbreviation, e.g., "LAL", "GSW")
+
+### POST /predict
+Predict the outcome of a game between two teams
+
+Request body:
+```json
+{
+  "team": "LAL
