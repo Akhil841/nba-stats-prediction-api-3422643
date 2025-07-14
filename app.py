@@ -101,4 +101,13 @@ def search_player(player_name):
     """Search for player by name"""
     endpoint = f"{NBA_STATS_BASE_URL}/playerindex"
     params = {
-        'Season
+        'Season': '2023-24',
+        'SeasonType': 'Regular Season',
+        'LeagueID': '00'
+    }
+    
+    try:
+        data = get_cached_response(endpoint, headers=HEADERS, params=params)
+        
+        # Extract headers and rows from response
+        headers = data['resultSets'][0][
