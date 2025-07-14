@@ -163,4 +163,11 @@ def train_prediction_model():
     
     return {"message": "Model trained successfully"}
 
-def get_team_
+def get_team_features(team_abbr, opponent_abbr):
+    """Get features for prediction model input"""
+    # Get team IDs
+    team_id = TEAM_ID_MAP.get(team_abbr.upper())
+    opponent_id = TEAM_ID_MAP.get(opponent_abbr.upper())
+    
+    if not team_id or not opponent_id:
+        return
