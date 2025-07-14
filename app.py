@@ -286,4 +286,9 @@ def predict_route():
 @app.route('/train', methods=['POST'])
 def train_route():
     result = train_prediction_model()
-    return
+    return jsonify(result)
+
+if __name__ == '__main__':
+    # Ensure model is trained on startup
+    train_prediction_model()
+    app.run(host='0.0.0.0', port=5000, debug=True)
