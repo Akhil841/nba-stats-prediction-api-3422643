@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  nba-api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
