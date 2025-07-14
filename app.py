@@ -201,4 +201,10 @@ def get_team_features(team_abbr, opponent_abbr):
             'opp_pts': opp_df['PTS'].values[0],
             'opp_ast': opp_df['AST'].values[0],
             'opp_reb': opp_df['REB'].values[0],
-            'opp_stl': opp_df['STL'].values[0],
+            'opp_stl': opp_df['STL'].values[0],            'opp_blk': opp_df['BLK'].values[0],
+            'opp_fg_pct': opp_df['FG_PCT'].values[0],
+            'opp_ft_pct': opp_df['FT_PCT'].values[0],
+            'opp_3p_pct': opp_df['FG3_PCT'].values[0]
+        }
+        
+        # Convert to numpy 
