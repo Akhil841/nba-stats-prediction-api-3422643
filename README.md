@@ -6,7 +6,7 @@
 
 It was generated entirely by my multi-agent prompt-to-code workflow [OctoRAG](https://github.com/Akhil841/octorag) using four instances of Claude Sonnet 3.7 via its test. Do NOT use vibe-coded code for enterprise-level applications. This is a WARNING. 
 
-Now back to the README.
+Now back to the (generated) README.
 
 A Python HTTP server that handles GET and POST requests to retrieve NBA player stats and predict game outcomes based on team statistics.
 
