@@ -231,4 +231,13 @@ def predict_game_outcome(team_abbr, opponent_abbr):
         "team": team_abbr.upper(),
         "opponent": opponent_abbr.upper(),
         "win_probability": float(win_probability),
-        "prediction": "win" if win_probabi
+        "prediction": "win" if win_probability > 0.5 else "loss"
+    }
+
+# API Routes
+@app.route('/')
+def home():
+    return jsonify({
+        "message": "NBA Stats and Prediction API",
+        "endpoints": {
+            "GET /player/search/{name}": "Search for a player by name",
