@@ -47,4 +47,11 @@ HEADERS = {
 model = None
 model_features = None
 
-def get_cached_response(url, headers=None, p
+def get_cached_response(url, headers=None, params=None):
+    """Get response from cache or make a new request"""
+    cache_key = url + str(params or {})
+    
+    if cache_key in cache:
+        timestamp, data = cache[cache_key]
+        if datetime.now().timestamp() - timestamp < CACHE_EXPIRY:
+      
