@@ -215,4 +215,13 @@ def get_team_features(team_abbr, opponent_abbr):
         return None, f"Error processing team data: {str(e)}"
 
 def predict_game_outcome(team_abbr, opponent_abbr):
-    """
+    """Predict the probability of team winning against opponent"""
+    if model is None:
+        train_prediction_model()
+    
+    # Get features for prediction
+    X, error = get_team_features(team_abbr, opponent_abbr)
+    
+    if error:
+        return {"error": error}
+    
