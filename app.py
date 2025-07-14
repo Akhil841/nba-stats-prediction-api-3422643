@@ -117,4 +117,10 @@ def search_player(player_name):
         df = pd.DataFrame(rows, columns=headers)
         
         # Filter players by name (case insensitive partial match)
-        matching_players = df[
+        matching_players = df[df['PLAYER_NAME'].str.lower().str.contains(player_name.lower())]
+        
+        if matching_players.empty:
+            return []
+        
+        # Return list of matching players with relevant info
+        result = matching_players[['PERSON_ID', 'PLAYER_NAME', 'TEAM_ID', 
