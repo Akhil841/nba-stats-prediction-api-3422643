@@ -260,4 +260,12 @@ def player_stats_route(player_id):
 def team_stats_route(team_abbr):
     team_abbr = team_abbr.upper()
     team_id = TEAM_ID_MAP.get(team_abbr)
+        if not team_id:
+        return jsonify({"error": "Invalid team abbreviation"}), 400
     
+    stats = get_team_stats(team_id)
+    if stats:
+        return jsonify(stats)
+    return jsonify({"error": "Could not retrieve team stats"}), 404
+
+@app.route('/predict
