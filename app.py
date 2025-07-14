@@ -240,4 +240,10 @@ def home():
     return jsonify({
         "message": "NBA Stats and Prediction API",
         "endpoints": {
-            "GET /player/search/{name}": "Search for a player by name",
+            "GET /player/search/{name}": "Search for a player by name",            "GET /player/{player_id}/stats": "Get stats for a player",
+            "GET /team/{team_abbr}/stats": "Get stats for a team",
+            "POST /predict": "Predict game outcome between two teams"
+        }
+    })
+
+@app.route('/player/search/<name>')
