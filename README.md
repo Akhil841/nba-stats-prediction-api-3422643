@@ -41,4 +41,22 @@ Predict the outcome of a game between two teams
 Request body:
 ```json
 {
-  "team": "LAL
+  "team": "LAL",
+  "opponent": "GSW"
+}
+```
+
+Response:
+```json
+{
+  "team": "LAL",
+  "opponent": "GSW",
+  "win_probability": 0.65,
+  "prediction": "win"
+}
+```
+
+### POST /train
+Retrain the prediction model with latest data
+
+## Notes
