@@ -133,4 +133,10 @@ def search_player(player_name):
 def train_prediction_model():
     """Train a model to predict game outcomes"""
     global model, model_features
+        # In a real application, we would load historical game data
+    # For demonstration, we'll create sample data
     
+    # Features that predict game outcomes
+    features = [
+        'team_pts', 'team_ast', 'team_reb', 'team_stl', 'team_blk', 
+   
