@@ -152,4 +152,7 @@ def train_prediction_model():
     X = np.random.rand(n_samples, len(features))
     
     # Simulate target (win/loss) based on synthetic feature importance
-    # Higher scoring and shooting percentage increases win proba
+    # Higher scoring and shooting percentage increases win probability
+    weights = np.array([0.2, 0.1, 0.1, 0.05, 0.05, 0.15, 0.1, 0.1, 
+                        -0.15, -0.05, -0.05, -0.05, -0.05, -0.1, -0.05, -0.05])
+    y_proba = np.dot(X, weights) + np.random.normal(0, 0.1, n_samples)
