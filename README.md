@@ -60,3 +60,6 @@ Response:
 Retrain the prediction model with latest data
 
 ## Notes
+- The NBA Stats API has rate limits, so responses are cached for 1 hour
+- The prediction model is trained on historical data and provides estimates only
+- Team abbreviations must match official NBA abbreviations (e.g., "LAL" for Lakers)
