@@ -146,4 +146,10 @@ def train_prediction_model():
     
     model_features = features
     
-    # For demonstration
+    # For demonstration, we'll simulate having historical data
+    np.random.seed(42)
+    n_samples = 1000
+    X = np.random.rand(n_samples, len(features))
+    
+    # Simulate target (win/loss) based on synthetic feature importance
+    # Higher scoring and shooting percentage increases win proba
