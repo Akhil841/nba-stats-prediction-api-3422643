@@ -91,4 +91,14 @@ def get_team_stats(team_id, season="2023-24"):
     }
     
     try:
-        data = get_cached_response(endpoint, headers=HEADER
+        data = get_cached_response(endpoint, headers=HEADERS, params=params)
+        return data
+    except Exception as e:
+        print(f"Error getting team stats: {e}")
+        return None
+
+def search_player(player_name):
+    """Search for player by name"""
+    endpoint = f"{NBA_STATS_BASE_URL}/playerindex"
+    params = {
+        'Season
