@@ -184,4 +184,11 @@ def get_team_features(team_abbr, opponent_abbr):
         headers = team_data['resultSets'][0]['headers']
         team_df = pd.DataFrame([team_stats], columns=headers)
         
-        # Extract relevant stats from o
+        # Extract relevant stats from opponent data
+        opp_stats = opp_data['resultSets'][0]['rowSet'][0]
+        opp_df = pd.DataFrame([opp_stats], columns=headers)
+        
+        # Create feature vector
+        features = {
+            'team_pts': team_df['PTS'].values[0],
+            'team_ast': team_df
