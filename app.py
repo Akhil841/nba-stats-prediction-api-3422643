@@ -253,4 +253,11 @@ def home():
 @app.route('/player/<player_id>/stats')
 def player_stats_route(player_id):
     stats = get_player_stats(player_id)
-    if stats:
+    if stats:        return jsonify(stats)
+    return jsonify({"error": "Could not retrieve player stats"}), 404
+
+@app.route('/team/<team_abbr>/stats')
+def team_stats_route(team_abbr):
+    team_abbr = team_abbr.upper()
+    team_id = TEAM_ID_MAP.get(team_abbr)
+    
