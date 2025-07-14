@@ -155,4 +155,12 @@ def train_prediction_model():
     # Higher scoring and shooting percentage increases win probability
     weights = np.array([0.2, 0.1, 0.1, 0.05, 0.05, 0.15, 0.1, 0.1, 
                         -0.15, -0.05, -0.05, -0.05, -0.05, -0.1, -0.05, -0.05])
-    y_proba = np.dot(X, weights) + np.random.normal(0, 0.1, n_samples)
+    y_proba = np.dot(X, weights) + np.random.normal(0, 0.1, n_samples)    y = (y_proba > 0).astype(int)
+    
+    # Train a Random Forest Classifier
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model.fit(X, y)
+    
+    return {"message": "Model trained successfully"}
+
+def get_team_
