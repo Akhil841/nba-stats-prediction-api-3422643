@@ -4,4 +4,16 @@ A Python HTTP server that handles GET and POST requests to retrieve NBA player s
 
 ## Features
 
-- Player search b
+- Player search by name
+- Retrieve player statistics
+- Retrieve team statistics
+- Predict win probability for games between two teams
+
+## Installation
+
+1. Clone this repository
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Run th
