@@ -16,4 +16,18 @@ A Python HTTP server that handles GET and POST requests to retrieve NBA player s
    ```
    pip install -r requirements.txt
    ```
-3. Run th
+3. Run the server:
+   ```
+   python app.py
+   ```
+
+## API Endpoints
+
+### GET /
+Returns available endpoints and API information
+
+### GET /player/search/{name}
+Search for players by name
+
+### GET /player/{player_id}/stats
+Get st
