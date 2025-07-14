@@ -63,4 +63,14 @@ def get_cached_response(url, headers=None, params=None):
     cache[cache_key] = (datetime.now().timestamp(), data)
     return data
 
-def get_player_stats(player_id, season="2023-24
+def get_player_stats(player_id, season="2023-24"):
+    """Get stats for a specific player"""
+    endpoint = f"{NBA_STATS_BASE_URL}/playerprofilev2"
+    params = {
+        'PlayerID': player_id,
+        'PerMode': 'PerGame',
+        'SeasonType': 'Regular Season'
+    }
+    
+    try:
+        data = get_cached_respons
