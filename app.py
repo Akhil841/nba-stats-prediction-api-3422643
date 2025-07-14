@@ -224,4 +224,11 @@ def predict_game_outcome(team_abbr, opponent_abbr):
     
     if error:
         return {"error": error}
+        # Make prediction
+    win_probability = model.predict_proba(X)[0, 1]
     
+    return {
+        "team": team_abbr.upper(),
+        "opponent": opponent_abbr.upper(),
+        "win_probability": float(win_probability),
+        "prediction": "win" if win_probabi
