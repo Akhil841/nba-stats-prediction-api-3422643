@@ -196,4 +196,9 @@ def get_team_features(team_abbr, opponent_abbr):
             'team_stl': team_df['STL'].values[0],
             'team_blk': team_df['BLK'].values[0],
             'team_fg_pct': team_df['FG_PCT'].values[0],
-            'team_ft_pct': team_df['F
+            'team_ft_pct': team_df['FT_PCT'].values[0],
+            'team_3p_pct': team_df['FG3_PCT'].values[0],
+            'opp_pts': opp_df['PTS'].values[0],
+            'opp_ast': opp_df['AST'].values[0],
+            'opp_reb': opp_df['REB'].values[0],
+            'opp_stl': opp_df['STL'].values[0],
