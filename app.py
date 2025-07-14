@@ -54,4 +54,13 @@ def get_cached_response(url, headers=None, params=None):
     if cache_key in cache:
         timestamp, data = cache[cache_key]
         if datetime.now().timestamp() - timestamp < CACHE_EXPIRY:
-      
+            return data
+    
+    response = requests.get(url, headers=headers, params=params)
+    response.raise_for_status()
+    data = response.json()
+    
+    cache[cache_key] = (datetime.now().timestamp(), data)
+    return data
+
+def get_player_stats(player_id, season="2023-24
