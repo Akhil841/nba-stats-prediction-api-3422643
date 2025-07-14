@@ -110,4 +110,11 @@ def search_player(player_name):
         data = get_cached_response(endpoint, headers=HEADERS, params=params)
         
         # Extract headers and rows from response
-        headers = data['resultSets'][0][
+        headers = data['resultSets'][0]['headers']
+        rows = data['resultSets'][0]['rowSet']
+        
+        # Convert to pandas DataFrame for easier filtering
+        df = pd.DataFrame(rows, columns=headers)
+        
+        # Filter players by name (case insensitive partial match)
+        matching_players = df[
