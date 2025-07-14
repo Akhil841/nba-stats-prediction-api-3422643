@@ -278,4 +278,12 @@ def predict_route():
     team = data.get('team')
     opponent = data.get('opponent')
     
-    if not team or not opponent:
+    if not team or not opponent:        return jsonify({"error": "Team and opponent are required"}), 400
+    
+    result = predict_game_outcome(team, opponent)
+    return jsonify(result)
+
+@app.route('/train', methods=['POST'])
+def train_route():
+    result = train_prediction_model()
+    return
