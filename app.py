@@ -123,4 +123,14 @@ def search_player(player_name):
             return []
         
         # Return list of matching players with relevant info
-        result = matching_players[['PERSON_ID', 'PLAYER_NAME', 'TEAM_ID', 
+        result = matching_players[['PERSON_ID', 'PLAYER_NAME', 'TEAM_ID', 'TEAM_ABBREVIATION']].to_dict('records')
+        return result
+    
+    except Exception as e:
+        print(f"Error searching player: {e}")
+        return []
+
+def train_prediction_model():
+    """Train a model to predict game outcomes"""
+    global model, model_features
+    
