@@ -191,4 +191,9 @@ def get_team_features(team_abbr, opponent_abbr):
         # Create feature vector
         features = {
             'team_pts': team_df['PTS'].values[0],
-            'team_ast': team_df
+            'team_ast': team_df['AST'].values[0],
+            'team_reb': team_df['REB'].values[0],
+            'team_stl': team_df['STL'].values[0],
+            'team_blk': team_df['BLK'].values[0],
+            'team_fg_pct': team_df['FG_PCT'].values[0],
+            'team_ft_pct': team_df['F
