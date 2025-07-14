@@ -139,4 +139,11 @@ def train_prediction_model():
     # Features that predict game outcomes
     features = [
         'team_pts', 'team_ast', 'team_reb', 'team_stl', 'team_blk', 
-   
+        'team_fg_pct', 'team_ft_pct', 'team_3p_pct',
+        'opp_pts', 'opp_ast', 'opp_reb', 'opp_stl', 'opp_blk',
+        'opp_fg_pct', 'opp_ft_pct', 'opp_3p_pct'
+    ]
+    
+    model_features = features
+    
+    # For demonstration
