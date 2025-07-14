@@ -33,4 +33,8 @@ CACHE_EXPIRY = 3600  # Cache expiry in seconds
 # Headers to mimic browser request for NBA Stats API
 HEADERS = {
     'Host': 'stats.nba.com',
-    'User-Age
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection
