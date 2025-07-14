@@ -37,4 +37,14 @@ HEADERS = {
     'Accept': 'application/json, text/plain, */*',
     'Accept-Language': 'en-US,en;q=0.5',
     'Accept-Encoding': 'gzip, deflate, br',
-    'Connection
+    'Connection': 'keep-alive',
+    'Referer': 'https://stats.nba.com/',
+    'x-nba-stats-origin': 'stats',
+    'x-nba-stats-token': 'true'
+}
+
+# Model variables
+model = None
+model_features = None
+
+def get_cached_response(url, headers=None, p
